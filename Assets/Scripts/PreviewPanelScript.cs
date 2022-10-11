@@ -55,7 +55,6 @@ public class PreviewPanelScript : MonoBehaviour
         QuestionData data = GetCurrentQuestionData();
         if (m_toggleGroupScript.ActiveEntryIndex == data.answer)
             m_score++;
-        print(m_score);
 
         gameObject.SetActive(false);
         m_resultPanelScript.gameObject.SetActive(true);
@@ -64,6 +63,7 @@ public class PreviewPanelScript : MonoBehaviour
 
     public void StartPreview(int quiz_index)
     {
+        m_score = 0;
         m_quizIndex = quiz_index;
         m_currentQuestionIndex = 0;
         PopulateQuestionInternal(GetCurrentQuestionData());
